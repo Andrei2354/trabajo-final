@@ -5,8 +5,12 @@ class ListaLibros:
         self.libros = []
 
     def create(self, libro)->Libro:
-        self.libros.append(libro)
-        return libro
+        if type(libro) != Libro:
+            raise TypeError("libro must be a Libro object")
+
+        if libro not in self.libros:
+            return self.libros.append(libro)
+        return None
 
     def read(self)->list:
         return self.libros
@@ -17,29 +21,28 @@ class ListaLibros:
             result += str(libro) + "\n"
         return result
     
-    def getLibro(self, nombre:str)->Libro:
+    def getlibro(self, libro, autor, comentario)->Libro:
         for libro in self.libros:
-            if libro.nombre == nombre:
+            if libro.libro == libro and libro.autor == autor and libro.comentario == comentario:
                 return libro
         return None
     
-    def getLibroPorId(self, id:int)->Libro:
+    def getlibroPorId(self, id:int)->Libro:
         for libro in self.libros:
             if int(libro.id) == int(id):
                 return libro
         return None
 
-    def update(self, nombre:str, nuevo_nombre:str):
+    def update(self, libro, autor, comentario, nova_libro, new_autor, new_comentario):
         for libro in self.libros:
-            if libro.nombre == nombre:
-                libro.update(nuevo_nombre)
+            if libro.libro == libro and libro.autor == autor and libro.comentario == comentario:
+                libro.update(nova_libro, new_autor, new_comentario)
                 return libro
         return None
 
-    def delete(self, nombre:str):
+    def delete(self, libro, autor, comentario):
         for libro in self.libros:
-            if libro.nombre == nombre:
-                libro.delete()
+            if libro.libro == libro and libro.autor == autor and libro.comentario == comentario:
                 self.libros.remove(libro)
                 return libro
         return None

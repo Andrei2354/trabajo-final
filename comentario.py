@@ -1,9 +1,16 @@
 class Comentario:
-    def __init__(self, comentario:str) -> None:
+    def __init__(self, id:int, comentario:str):
+        self.id = int(id)
         self.comentario = comentario
-    
-    def __str__(self) -> str:
-        return self.comentario
+
+    def actualizar(self, comentario):
+        self.comentario = comentario
+
+    def borrar(self):
+        self.comentario = None
     
     def leer(self) -> str:
-        return self.comentario
+        return str(self.id) + "|" + str(self.comentario)
+    
+    def __str__(self) -> str:
+        return str(self.comentario)
