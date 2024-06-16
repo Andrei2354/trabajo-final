@@ -14,7 +14,7 @@ class ProveedorLibrosSQL(ProveedorLibrosI):
         listas_libros = ListaLibros()
         cursor = self.db.getAll('libro')
         for row in cursor:
-            libro = Libro(row[0], row[1], row[2])
+            libro = Libro(row[0], row[1], row[2], row[3])
             listas_libros.create(libro)
         
         self.db.close()

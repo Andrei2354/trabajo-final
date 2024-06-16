@@ -3,13 +3,13 @@ class Autor:
         self.id = int(id)
         self.nombre = nombre
 
-    def actualizar(self, nombre):
+    def update(self, nombre):
         self.nombre = nombre
 
-    def borrar(self):
+    def delete(self):
         self.nombre = None
     
-    def leer(self) -> str:
+    def read(self) -> str:
         return str(self.id) + "|" + str(self.nombre)
     
     def __str__(self) -> str:

@@ -8,7 +8,7 @@ class Libro:
         self.autor = autor
         self.id = int(id)
     
-    def actualizar(self, libro:str, autor, comentario):
+    def update(self, libro:str, autor, comentario):
         self.autor = autor
         self.libro = libro
         self.comentario = comentario
@@ -21,5 +21,5 @@ class Libro:
     def __str__(self) -> str:
         return str(self.libro) + "|" + str(self.autor) + "|" + str(self.comentario)
     
-    def leer(self) -> str:
+    def read(self) -> str:
         return str(self.id) + "|" + str(self.libro)  + "|" + str(self.autor)  + "|" + str(self.comentario)

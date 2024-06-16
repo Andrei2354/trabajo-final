@@ -21,17 +21,17 @@ class ProveedorComentarioSQL(ProveedorComentariosI):
         self.db.close()
         return  lista_comentarios
     
-    def createAutor(self, comentario):
+    def createComentario(self, comentario):
         self.db.insert('comentario', '(?, ?)', (int(comentario.id), str(comentario.nombre)))
 
         return comentario
     
-    def updateAutor(self, nombre, nuevo_nombre):
+    def updateComentario(self, nombre, nuevo_nombre):
         self.db.update('comentario', 'nombre=?', 'nombre=?', (nuevo_nombre, nombre))
         
         return Comentario(-1, nuevo_nombre)
     
-    def deleteAutor(self, nombre):
+    def deleteComentario(self, nombre):
         self.db.delete('comentario', 'nombre=?', (nombre,))
         
         return Comentario(-1, nombre)

@@ -17,13 +17,13 @@ class ListaComentarios:
             result += str(comentario) + "\n"
         return result
     
-    def getcomentario(self, nombre:str)->Comentario:
+    def getComentario(self, nombre:str)->Comentario:
         for comentario in self.comentarios:
             if comentario.nombre == nombre:
                 return comentario
         return None
     
-    def getcomentarioPorId(self, id:int)->Comentario:
+    def getComentarioPorId(self, id:int)->Comentario:
         for comentario in self.comentarios:
             if int(comentario.id) == int(id):
                 return comentario

@@ -17,39 +17,39 @@ class ListaLibros:
     
     def __str__(self)->str:
         result = ""
-        for libro in self.libros:
-            result += str(libro) + "\n"
+        for l in self.libros:
+            result += str(l) + "\n"
         return result
     
-    def getlibro(self, libro, autor, comentario)->Libro:
-        for libro in self.libros:
-            if libro.libro == libro and libro.autor == autor and libro.comentario == comentario:
-                return libro
+    def getLibro(self, libro, autor, comentario)->Libro:
+        for l in self.libros:
+            if l.libro == libro and l.autor == autor and l.comentario == comentario:
+                return l
         return None
     
-    def getlibroPorId(self, id:int)->Libro:
-        for libro in self.libros:
-            if int(libro.id) == int(id):
-                return libro
+    def getLibroPorId(self, id:int)->Libro:
+        for l in self.libros:
+            if int(l.id) == int(id):
+                return l
         return None
 
-    def update(self, libro, autor, comentario, nova_libro, new_autor, new_comentario):
-        for libro in self.libros:
-            if libro.libro == libro and libro.autor == autor and libro.comentario == comentario:
-                libro.update(nova_libro, new_autor, new_comentario)
-                return libro
+    def update(self, libro, autor, comentario, nuevo_libro, nuevo_autor, nuevo_comentario):
+        for l in self.libros:
+            if l.libro == libro and l.autor == autor and l.comentario == comentario:
+                l.update(nuevo_libro, nuevo_autor, nuevo_comentario)
+                return l
         return None
 
     def delete(self, libro, autor, comentario):
-        for libro in self.libros:
-            if libro.libro == libro and libro.autor == autor and libro.comentario == comentario:
-                self.libros.remove(libro)
-                return libro
+        for l in self.libros:
+            if l.libro == libro and l.autor == autor and l.comentario == comentario:
+                self.libros.remove(l)
+                return l
         return None
     
     def getNewId(self) -> int:
         max_id = 0
-        for libro in self.libros:
-            if libro.id > max_id:
-                max_id = libro.id
+        for l in self.libros:
+            if l.id > max_id:
+                max_id = l.id
         return max_id + 1

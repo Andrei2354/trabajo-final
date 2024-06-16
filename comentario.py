@@ -3,13 +3,13 @@ class Comentario:
         self.id = int(id)
         self.comentario = comentario
 
-    def actualizar(self, comentario):
+    def update(self, comentario):
         self.comentario = comentario
 
-    def borrar(self):
+    def delete(self):
         self.comentario = None
     
-    def leer(self) -> str:
+    def read(self) -> str:
         return str(self.id) + "|" + str(self.comentario)
     
     def __str__(self) -> str:
